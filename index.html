@@ -16,7 +16,7 @@
       function computerPlay() {
 
         let choices = ['rock', 'paper', 'scissors']
-        selection = choices[Math.floor(Math.random() * choices.length)];
+        let selection = choices[Math.floor(Math.random() * choices.length)];
         return selection;
       }
 
@@ -34,8 +34,8 @@
           alert('It\'s a tie');
 
         } else if (((playerSelection == 'rock') && (computerSelection == 'paper')) || 
-        ((playerSelection == 'paper') && (computerSelection = 'scissors')) || 
-        ((playerSelection == 'scissors') && (computerSelection = 'rock'))) {
+        ((playerSelection == 'paper') && (computerSelection == 'scissors')) || 
+        ((playerSelection == 'scissors') && (computerSelection == 'rock'))) {
 
           alert('You loose');
 
