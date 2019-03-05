@@ -10,7 +10,11 @@
   <body>
     
     <script>
-      
+
+      let playerScore = 0;
+      let computerScore = 0;
+      let roundNumber;
+      let playerSelection;
   
       // Function that randomly returns one of the array values
       function computerPlay() {
@@ -20,16 +24,12 @@
         return selection;
       }
 
-      let playerSelection = prompt('Rock, Paper or Scissors?');
-
-      playerSelection = playerSelection.toLowerCase();
-
       // Function to determine the winner of the round
       function round(playerSelection, computerSelection) {
         
-        alert(computerSelection);
+        alert('Computer chooses ' + computerSelection + '.');
   
-        if ((playerSelection == computerSelection)) {
+        if (playerSelection == computerSelection) {
 
           alert('It\'s a tie');
 
@@ -37,15 +37,41 @@
         ((playerSelection == 'paper') && (computerSelection == 'scissors')) || 
         ((playerSelection == 'scissors') && (computerSelection == 'rock'))) {
 
-          alert('You loose');
+          alert('You loose: ' + computerSelection + ' beats ' + playerSelection + '!');
+          return computerScore += 1;
 
         } else {
 
-          alert( 'You win' );
+          alert( 'You win: ' + playerSelection + ' beats ' + computerSelection + '!');
+          return playerScore += 1;
         }
       }
 
-      round(playerSelection, computerPlay());
+
+      // For loop that plays 5 rounds of the game
+      for (roundNumber = 0; roundNumber < 5; roundNumber++) {
+
+        playerSelection = prompt('Rock, Paper or Scissors?');
+
+        playerSelection = playerSelection.toLowerCase();
+
+        round(playerSelection, computerPlay());
+      }
+
+      if (playerScore > computerScore) {
+
+        alert('Congratulations, you won ' + playerScore + ' to ' + computerScore + '.');
+
+      } else if (playerScore < computerScore) {
+
+        alert('Too bad, you lost ' + playerScore + ' to ' + computerScore + '.');
+
+      } else {
+
+        alert('It\'s a tie');
+      }
+
+      
 
     </script>
 
