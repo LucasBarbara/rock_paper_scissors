@@ -20,6 +20,33 @@
         return selection;
       }
 
+      let playerSelection = prompt('Rock, Paper or Scissors?');
+
+      playerSelection = playerSelection.toLowerCase();
+
+      // Function to determine the winner of the round
+      function round(playerSelection, computerSelection) {
+        
+        alert(computerSelection);
+  
+        if ((playerSelection == computerSelection)) {
+
+          alert('It\'s a tie');
+
+        } else if (((playerSelection == 'rock') && (computerSelection == 'paper')) || 
+        ((playerSelection == 'paper') && (computerSelection = 'scissors')) || 
+        ((playerSelection == 'scissors') && (computerSelection = 'rock'))) {
+
+          alert('You loose');
+
+        } else {
+
+          alert( 'You win' );
+        }
+      }
+
+      round(playerSelection, computerPlay());
+
     </script>
 
   </body>
