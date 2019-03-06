@@ -13,7 +13,6 @@
 
       let playerScore = 0;
       let computerScore = 0;
-      let roundNumber;
       let playerSelection;
   
       // Function that randomly returns one of the array values
@@ -55,9 +54,15 @@
 
         playerSelection = playerSelection.toLowerCase();
 
+        if ((playerSelection != 'rock') && (playerSelection != 'paper') && (playerSelection != 'scissors')) {
+
+          playerSelection = prompt('That\'s not a valid choice. Rock, Paper or Scissors?');
+        }
+
         round(playerSelection, computerPlay());
       }
 
+      // Check the final winner
       if (playerScore > computerScore) {
 
         alert('Congratulations, you won ' + playerScore + ' to ' + computerScore + '.');
@@ -70,8 +75,6 @@
 
         alert('It\'s a tie');
       }
-
-      
 
     </script>
 
